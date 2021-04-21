@@ -10,10 +10,11 @@ public class ScoreDisplay extends PApplet
 {
 
 
-	ArrayList<Note> node = new ArrayList<Note>();
+	ArrayList<Note> n = new ArrayList<Note>();
 
 
 	String score = "DEFGABcd";
+
 	//String score = "D2E2F2G2A2B2c2d2";
 	//String score = "DEF2F2F2EFA2A2B2AFD2E2D2D2D2";
 	
@@ -34,17 +35,22 @@ public class ScoreDisplay extends PApplet
 
 	public void draw()
 	{
-		background(255);
+		background(0);
 		
 	}
 
 	void loadNotes()
 	{
-		for(Note score : node)
+		char[] ch = new char[score.length()];
+		for(int i=0;i<score.length();i++)
 		{
-			println(score);
+			ch[i] = score.charAt(i);
 		}
-		
+		for ( char c : ch)
+		{
+			println(c);
+		}
+
 	}
 
 	void drawNotes()
