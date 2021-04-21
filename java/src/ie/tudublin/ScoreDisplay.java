@@ -5,12 +5,14 @@ import java.util.ArrayList;
 
 import processing.core.PApplet;
 
+
 public class ScoreDisplay extends PApplet
 
 {
 
 
-	ArrayList<Note> n = new ArrayList<Note>();
+
+	ArrayList<Note> music = new ArrayList<Note>();
 
 
 	String score = "DEFGABcd";
@@ -31,6 +33,7 @@ public class ScoreDisplay extends PApplet
 	public void setup() 
 	{
 		loadNotes();
+		printStars();
 	}
 
 	public void draw()
@@ -39,19 +42,32 @@ public class ScoreDisplay extends PApplet
 		
 	}
 
-	void loadNotes()
-	{
-		char[] ch = new char[score.length()];
-		for(int i=0;i<score.length();i++)
-		{
-			ch[i] = score.charAt(i);
-		}
-		for ( char c : ch)
-		{
-			println(c);
-		}
+	
 
+	void loadNotes() {
+
+    	for(int i = 0; i < score.length(); i++) {
+   			if(i < score.length()) 
+        	
+				
+            		
+         
+    }
+
+
+	void printStars()
+	{
+		for (Note n: music)
+		{
+			println(n);
+		}
 	}
+
+		
+	
+
+
+	
 
 	void drawNotes()
 	{

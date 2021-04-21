@@ -1,6 +1,8 @@
+package ie.tudublin;
 
 
-public class Note {
+    public class Note {
+
     private char notes;
     private int duration;
 
@@ -14,10 +16,16 @@ public class Note {
     }
     
 
+    public Note(char result) {
+    }
+
+
     @Override
     public String toString() {
-        return "Note [duration=" + duration + ", note=" + note + "]";
+        return "Note [duration=" + duration + ", note=" + notes + "]";
     }
+
+
 
 
 
