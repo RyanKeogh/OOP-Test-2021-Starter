@@ -47,7 +47,13 @@ public class ScoreDisplay extends PApplet
 	void loadNotes() {
 
     	for(int i = 0; i < score.length(); i++) {
-   			if(i < score.length()) 
+   			if(i < score.length())
+			   {
+				music.add(new Note(score.charAt(i),1|2));
+				
+			   }
+
+		}
         	
 				
             		
