@@ -6,7 +6,13 @@ import java.util.ArrayList;
 import processing.core.PApplet;
 
 public class ScoreDisplay extends PApplet
+
 {
+
+
+	ArrayList<Note> node = new ArrayList<Note>();
+
+
 	String score = "DEFGABcd";
 	//String score = "D2E2F2G2A2B2c2d2";
 	//String score = "DEF2F2F2EFA2A2B2AFD2E2D2D2D2";
@@ -23,12 +29,21 @@ public class ScoreDisplay extends PApplet
 
 	public void setup() 
 	{
-		
+		loadNotes();
 	}
 
 	public void draw()
 	{
 		background(255);
+		
+	}
+
+	void loadNotes()
+	{
+		for(Note score : node)
+		{
+			println(score);
+		}
 		
 	}
 

@@ -1,15 +1,17 @@
 
 
 public class Note {
-    private char note;
+    private char notes;
     private int duration;
 
 
-    public Note()
+   
+
+    public Note(char notes, int duration)
     {
-
+        this.notes=notes;
+        this.duration=duration;
     }
-
     
 
     @Override
@@ -19,13 +21,13 @@ public class Note {
 
 
 
-    public char getNote() {
-        return note;
+    public char getNotes() {
+        return notes;
     }
 
 
-    public void setNote(char note) {
-        this.note = note;
+    public void setNotes(char notes) {
+        this.notes = notes;
     }
 
 
