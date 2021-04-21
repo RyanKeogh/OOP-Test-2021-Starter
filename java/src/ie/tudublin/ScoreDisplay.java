@@ -70,7 +70,7 @@ ArrayList<Note> music = new ArrayList<Note>();
 				   }
 				   else
 				   {
-					music.add(new Note(score.charAt(i), 1));
+					music.add(new Note(score.charAt(i), 2));
 				   }
 				}
 				catch(Exception r)
@@ -126,14 +126,16 @@ ArrayList<Note> music = new ArrayList<Note>();
 		for(int i=0; i< music.size();i++)
 		{
 			float x = map(i, 0, music.size(),width-100, 150 );
-			float y = map(i,0,music.size(),width,100);
+			float y = map(i,0,music.size(),height,100);
 			Note n = music.get(i);
 			
 			
 			
 			fill(0);
 			ellipse(x,300,25,25);
+			//ellipse(x,y,25,25);
 			line(x+10,300,x+10 ,250);
+			ellipse(235,280,25,25);
 			fill(0);
 			textAlign(CENTER,CENTER);
 			text(n.getNotes(),x,80);
@@ -144,10 +146,23 @@ ArrayList<Note> music = new ArrayList<Note>();
 
 
 		
-
+	
 		
 	}
-	/*int whichNote = -1;
+
+	/*public void mouseClicked()
+	{
+		for(int i=0; i<music.size(); i++)
+		{
+			Note s = music.get(i);
+			float x = map(i,0,
+		}
+	}
+	*/
+
+	/*int
+	
+	whichNote = -1;
 	boolean end = false;
 	public void mouseDragged()
 	{
