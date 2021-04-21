@@ -34,11 +34,13 @@ public class ScoreDisplay extends PApplet
 	{
 		loadNotes();
 		printStars();
+
 	}
 
 	public void draw()
 	{
-		background(0);
+		background(255);
+		drawNotes();
 		
 	}
 
@@ -49,15 +51,10 @@ public class ScoreDisplay extends PApplet
     	for(int i = 0; i < score.length(); i++) {
    			if(i < score.length())
 			   {
-				music.add(new Note(score.charAt(i),1|2));
+				music.add(new Note(score.charAt(i),1));
 				
 			   }
-
-		}
-        	
-				
-            		
-         
+			}
     }
 
 
@@ -77,5 +74,28 @@ public class ScoreDisplay extends PApplet
 
 	void drawNotes()
 	{
+		stroke(0);
+		fill(255);
+		float border = width* 0.05f;
+		
+		for(int i=0;i<=5; i++)
+		{
+			float y = map( i,0,5,100,height-200 );
+			line(border,y,width-border ,y);
+			
+		}
+		for(int i=0; i< music.size();i++)
+		{
+			float x = map(i, 0, music.size(), border + 50, height - border - 50);
+			Note n = music.get(i);
+			fill(0);
+			textAlign(CENTER,CENTER);
+			text(n.getNotes(),x,80);
+
+		}
+
+		
+
+		
 	}
 }
