@@ -44,18 +44,52 @@ public class ScoreDisplay extends PApplet
 		
 	}
 
-	
+	boolean bool = true;
 
 	void loadNotes() {
+		
+
 
     	for(int i = 0; i < score.length(); i++) {
    			if(i < score.length())
 			   {
-				music.add(new Note(score.charAt(i),1));
+				  if(Character.isLetter(score.charAt(i)))
+				   {
+					    bool = false;
+				   }
+			try{
+				   if(Character.isDigit(score.charAt(i+1)))
+				   {
+					   music.add(new Note(score.charAt(i),
+					   Character.getNumericValue(score.charAt(i+1))));
+				   }
+				   else
+				   {
+					music.add(new Note(score.charAt(i), 1));
+				   }
+				}
+				catch(Exception r)
+				{
+					println(r);
+					bool = true;
+				}
+				if(bool)
+				{
+					music.add(new Note(score.charAt(i),1));
+				}
+			}
+		
+				
+				}
+				 
+				   println(music.size());
+				   for(int i = 0; i < music.size(); i++) {
+					   println(music.get(i).getNotes(),music.get(i).getDuration());
+				}
 				
 			   }
-			}
-    }
+			
+    
 
 
 	void printStars()
@@ -86,13 +120,20 @@ public class ScoreDisplay extends PApplet
 		}
 		for(int i=0; i< music.size();i++)
 		{
-			float x = map(i, 0, music.size(), border + 50, height - border - 50);
+			float x = map(i, 0, music.size(),width-100, 150 );
+			float y = map(i,0,music.size(),width,100);
 			Note n = music.get(i);
+			fill(0);
+
+			ellipse(x,y,25,25);
 			fill(0);
 			textAlign(CENTER,CENTER);
 			text(n.getNotes(),x,80);
 
+
+
 		}
+
 
 		
 
