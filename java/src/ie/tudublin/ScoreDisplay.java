@@ -132,10 +132,35 @@ ArrayList<Note> music = new ArrayList<Note>();
 			
 			
 			fill(0);
-			ellipse(x,300,25,25);
+			//ellipse(x,300,25,25);
 			//ellipse(x,y,25,25);
-			line(x+10,300,x+10 ,250);
-			ellipse(235,280,25,25);
+			//line(x+10,300,x+10 ,250);
+
+			line(200,310,200,270);
+			ellipse(190,310,25,25);
+			
+			line(240,300,240,250);
+			ellipse(230,300,25,25);
+
+			line(280,290,280,230);
+			ellipse(270,280,25,25);
+
+			line(320,290,320,230);
+			ellipse(310,280,25,25);
+
+			line(360,290,360,230);
+			ellipse(350,280,25,25);
+
+			line(400,290,400,250);
+			ellipse(390,300,25,25);
+
+			line(440,290,440,230);
+			ellipse(430,280,25,25);
+
+			line(480,200,480,250);
+			ellipse(470,240,25,25);
+
+
 			fill(0);
 			textAlign(CENTER,CENTER);
 			text(n.getNotes(),x,80);
@@ -150,15 +175,25 @@ ArrayList<Note> music = new ArrayList<Note>();
 		
 	}
 
-	/*public void mouseClicked()
-	{
-		for(int i=0; i<music.size(); i++)
-		{
-			Note s = music.get(i);
-			float x = map(i,0,
-		}
-	}
-	*/
+	public void mousePressed()
+    {
+        for(int i=0;i<music.size(); i++)
+        {
+           
+            
+           
+			float x = map(i, 0, music.size(),width-100, 150 );
+
+            if(mouseX == x)
+            {
+				fill(255,0,0);               
+            }
+			else{
+				fill(0);
+			}
+
+        }
+    }
 
 	/*int
 	
