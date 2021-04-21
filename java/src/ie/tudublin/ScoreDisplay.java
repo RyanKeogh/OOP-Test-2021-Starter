@@ -10,12 +10,11 @@ public class ScoreDisplay extends PApplet
 
 {
 
+ArrayList<Note> music = new ArrayList<Note>();
 
 
-	ArrayList<Note> music = new ArrayList<Note>();
-
-
-	String score = "DEFGABcd";
+	//String score = "DEFGABcd";
+	String score = "DDDEDFABAAFEFFFFED";
 
 	//String score = "D2E2F2G2A2B2c2d2";
 	//String score = "DEF2F2F2EFA2A2B2AFD2E2D2D2D2";
@@ -125,7 +124,8 @@ public class ScoreDisplay extends PApplet
 			Note n = music.get(i);
 			fill(0);
 
-			ellipse(x,y,25,25);
+			ellipse(x,300,25,25);
+			line(x+10,300,x+10 ,250);
 			fill(0);
 			textAlign(CENTER,CENTER);
 			text(n.getNotes(),x,80);
