@@ -40,6 +40,12 @@ ArrayList<Note> music = new ArrayList<Note>();
 	{
 		background(255);
 		drawNotes();
+		if(mouseX > 50)
+		
+		{
+			colorMode(HSB);
+			fill(100,255,255);
+		}
 		
 	}
 
@@ -59,8 +65,8 @@ ArrayList<Note> music = new ArrayList<Note>();
 			try{
 				   if(Character.isDigit(score.charAt(i+1)))
 				   {
-					   music.add(new Note(score.charAt(i),
-					   Character.getNumericValue(score.charAt(i+1))));
+					   music.add(new Note(score.charAt(i)));
+					 
 				   }
 				   else
 				   {
@@ -122,8 +128,10 @@ ArrayList<Note> music = new ArrayList<Note>();
 			float x = map(i, 0, music.size(),width-100, 150 );
 			float y = map(i,0,music.size(),width,100);
 			Note n = music.get(i);
+			
+			
+			
 			fill(0);
-
 			ellipse(x,300,25,25);
 			line(x+10,300,x+10 ,250);
 			fill(0);
@@ -139,4 +147,32 @@ ArrayList<Note> music = new ArrayList<Note>();
 
 		
 	}
+	/*int whichNote = -1;
+	boolean end = false;
+	public void mouseDragged()
+	{
+		if (whichNote != -1)
+		{
+			int place = (int)map(mouseX, leftBorder, width - border, 1, 30);
+			
+			if (place >= 1 && place <= 30)
+			{
+				Note m = music.get(whichNote); 
+				if (end)
+				{
+					if (place - music.get(m) > 0)
+					{
+						music.setNotes(place);
+					}
+				}
+				else
+				{
+					if (music.getEnd() - place > 0 )
+					{
+						music.setStart(place);
+					}
+				}
+			}
+		}
+	}*/
 }
